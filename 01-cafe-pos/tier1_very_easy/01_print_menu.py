@@ -50,6 +50,11 @@ item_4_price = 6.50
 # TODO 8: print a final line of 30 equals signs
 
 
+
+print("==============================")
+print("The Trendiest CAFE - TODAY'S MENU")
+
+
 # ---------------------------------------------------------------
 # Don't change anything below this line.
 # This just reminds you what to check once you've finished.
