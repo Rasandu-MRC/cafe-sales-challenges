@@ -57,7 +57,7 @@ else:
    print()
    print("Here is the Menu...")
    print (MENU)
-   PRINT()
+   print()
    order_item = input("What do you like to order?")
 
 
