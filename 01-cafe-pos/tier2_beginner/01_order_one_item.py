@@ -48,9 +48,9 @@ MENU = {
 #         - if it does: print "Great choice! {order_item} costs ${price}."
 #         - if it doesn't: print "Sorry, we don't have {order_item} on the menu today."
 
-order_item = input("What do you like to order?")
+order_item.lower() = input("What do you like to order?")
 
-if order_item in MENU:
+if order_item.lower() in MENU.lower():
    print(f"Great choice! {order_item} - costs ${price}")
 else:
    print(f"Sorry, we don't have {order_item} on the Menu today.")
@@ -58,7 +58,7 @@ else:
    print("Here is the Menu...")
    print (MENU)
    print()
-   order_item = input("What do you like to order?")
+   order_item.lower() = input("What do you like to order?")
 
 
 
