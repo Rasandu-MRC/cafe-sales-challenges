@@ -47,3 +47,20 @@ MENU = {
 # TODO 2: check whether order_item exists in MENU
 #         - if it does: print "Great choice! {order_item} costs ${price}."
 #         - if it doesn't: print "Sorry, we don't have {order_item} on the menu today."
+
+order_item.lower() = input("What do you like to order?")
+
+if order_item.lower() in MENU.lower():
+   print(f"Great choice! {order_item} - costs ${price}")
+else:
+   print(f"Sorry, we don't have {order_item} on the Menu today.")
+   print()
+   print("Here is the Menu...")
+   print (MENU)
+   print()
+   order_item.lower() = input("What do you like to order?")
+
+
+
+
+
