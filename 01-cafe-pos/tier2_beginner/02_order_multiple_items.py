@@ -35,13 +35,17 @@ HINTS
 - Keep a variable like `total = 0` outside the loop, and add to it inside.
 """
 
+from turtle import done
+
+
 MENU = {
-    "Coffee": 4.50,
-    "Tea": 3.50,
-    "Muffin": 5.00,
-    "Toastie": 6.50,
-    "Hot Chocolate": 4.00,
+    "coffee": 4.50,
+    "tea": 3.50,
+    "muffin": 5.00,
+    "toastie": 6.50,
+    "hot chocolate": 4.00,
 }
+
 
 total = 0
 
@@ -54,3 +58,24 @@ total = 0
 
 
 # TODO: after the loop finishes, print the final total, e.g. "Your total is $9.5"
+
+
+
+while True:
+   order_item = input("What would you like to order? (type 'done' to finish)").lower()
+
+   if order_item == "done":
+        break
+
+   if order_item in MENU:
+            total += MENU[order_item]
+            print(f"Added {order_item} - ${MENU[order_item]}")
+            print()
+   else:
+            print(f"Sorry, {order_item} is not on the menu.")
+            print()
+
+        
+   
+print()
+print(f"Your total is ${total}")
