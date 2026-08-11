@@ -54,3 +54,23 @@ total = 0
 
 
 # TODO: after the loop finishes, print the final total, e.g. "Your total is $9.5"
+
+
+while True:
+
+   order_item = input("What do you like to order? ").lower()
+
+if order_item in MENU:
+   print(f"Great choice! {order_item.upper()} - costs ${MENU[order_item]}")
+else:
+   print(f"Sorry, we don't have {order_item.upper()} on the Menu today.")
+   print()
+   print("Here is the Menu...")
+   print (MENU)
+   print()
+   order_item = input("What do you like to order?")
+
+   
+   if : cont = input("Do you want anything else?")
+        break
+
