@@ -34,12 +34,13 @@ HINTS
 """
 
 MENU = {
-    "Coffee": 4.50,
-    "Tea": 3.50,
-    "Muffin": 5.00,
-    "Toastie": 6.50,
-    "Hot Chocolate": 4.00,
+    "coffee": 4.50,
+    "tea": 3.50,
+    "muffin": 5.00,
+    "toastie": 6.50,
+    "hot chocolate": 4.00,
 }
+
 
 # TODO 1: ask the customer what they would like, using input(), and store
 #         their answer in a variable called order_item
@@ -47,3 +48,18 @@ MENU = {
 # TODO 2: check whether order_item exists in MENU
 #         - if it does: print "Great choice! {order_item} costs ${price}."
 #         - if it doesn't: print "Sorry, we don't have {order_item} on the menu today."
+
+order_item = input("What do you like to order? ").lower()
+
+if order_item in MENU:
+   print(f"Great choice! {order_item.upper()} - costs ${MENU[order_item]}")
+else:
+   print(f"Sorry, we don't have {order_item.upper()} on the Menu today.")
+   print()
+   print("Here is the Menu...")
+   print (MENU)
+   print()
+   order_item = input("What do you like to order?")
+
+
+
