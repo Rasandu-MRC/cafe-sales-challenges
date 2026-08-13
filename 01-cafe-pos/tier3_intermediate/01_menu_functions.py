@@ -82,3 +82,23 @@ if __name__ == "__main__":
 
     # TODO: once the loop is done, call calculate_total() and then
     # display_receipt() to show the final receipt.
+
+while True:
+   order_item = input("What would you like to order? (type 'done' to finish)").lower()
+
+   if order_item == "done":
+        break
+
+   if order_item in MENU:
+            total += MENU[order_item]
+            print(f"Added {order_item} - ${MENU[order_item]}")
+            print()
+   else:
+            print(f"Sorry, {order_item} is not on the menu.")
+            print()
+
+        
+   
+print()
+print("----- RECEIPT -----")
+print(f"{order_item} - ${MENU[order_item]})
