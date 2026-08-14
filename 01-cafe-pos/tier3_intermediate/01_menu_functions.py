@@ -40,6 +40,7 @@ MENU = {
 
 
 def get_price(item_name):
+    return MENU.get(item_name)
     """
     Return the price of item_name from MENU, or None if it isn't on the menu.
 
@@ -52,6 +53,12 @@ def get_price(item_name):
 
 
 def calculate_total(order_list):
+    total = 0
+    for item in order_list:
+        price = get_price(item)
+        if price is not None:
+            total += price
+    return total
     """
     order_list is a list of item names, e.g. ["Coffee", "Muffin"].
     Return the sum of all their prices (use get_price() to look each one up).
@@ -65,6 +72,11 @@ def calculate_total(order_list):
 
 
 def display_receipt(order_list, total):
+    print("----- RECEIPT -----")
+    for item in order_list:
+        print(item_name)
+        print("Total: ")
+        print(f"${total:.2f}")
     """
     Print a neatly formatted receipt for order_list, followed by the total,
     matching the style shown in the EXAMPLE OUTPUT above.
@@ -76,6 +88,22 @@ def display_receipt(order_list, total):
 if __name__ == "__main__":
     order_list = []
 
+    while True:
+        order_item = input("What would you like to order? (type 'done' to finish)").lower()
+
+        if order_item == "done":
+            break
+
+        if order_item in MENU:
+            print(f"Added {order_item} - ${MENU[order_item]}")
+            print()
+        else:
+            print(f"Sorry, {order_item} is not on the menu.")
+            print()
+
+    total = calculate_total(order_list)
+    display_receipt(order_list, total)
+
     # TODO: write a while loop (like in tier2) that asks the customer what
     # they'd like, adds valid items to order_list, and stops when they type
     # "done".
@@ -83,22 +111,4 @@ if __name__ == "__main__":
     # TODO: once the loop is done, call calculate_total() and then
     # display_receipt() to show the final receipt.
 
-while True:
-   order_item = input("What would you like to order? (type 'done' to finish)").lower()
 
-   if order_item == "done":
-        break
-
-   if order_item in MENU:
-            total += MENU[order_item]
-            print(f"Added {order_item} - ${MENU[order_item]}")
-            print()
-   else:
-            print(f"Sorry, {order_item} is not on the menu.")
-            print()
-
-        
-   
-print()
-print("----- RECEIPT -----")
-print(f"{order_item} - ${MENU[order_item]})
