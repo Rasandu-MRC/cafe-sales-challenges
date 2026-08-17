@@ -64,7 +64,7 @@ total = 0
 while True:
    order_item = input("What would you like to order? (type 'done' to finish)").lower()
 
-   if order_item == "done":
+   if order_item == "done" or order_item == "finish":
         break
 
    if order_item in MENU:

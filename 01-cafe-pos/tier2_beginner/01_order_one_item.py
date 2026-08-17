@@ -53,6 +53,7 @@ order_item = input("What do you like to order? ").lower()
 
 if order_item in MENU:
    print(f"Great choice! {order_item.upper()} - costs ${MENU[order_item]}")
+
 else:
    print(f"Sorry, we don't have {order_item.upper()} on the Menu today.")
    print()
@@ -60,6 +61,3 @@ else:
    print (MENU)
    print()
    order_item = input("What do you like to order?")
-
-
-

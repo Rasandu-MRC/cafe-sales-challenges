@@ -31,11 +31,11 @@ TOTAL:            $9.50
 """
 
 MENU = {
-    "Coffee": 4.50,
-    "Tea": 3.50,
-    "Muffin": 5.00,
-    "Toastie": 6.50,
-    "Hot Chocolate": 4.00,
+    "coffee": 4.50,
+    "tea": 3.50,
+    "muffin": 5.00,
+    "toastie": 6.50,
+    "hot chocolate": 4.00,
 }
 
 
@@ -74,7 +74,7 @@ def calculate_total(order_list):
 def display_receipt(order_list, total):
     print("----- RECEIPT -----")
     for item in order_list:
-        print(item_name)
+        print(item)
         print("Total: ")
         print(f"${total:.2f}")
     """
@@ -102,6 +102,7 @@ if __name__ == "__main__":
             print()
 
     total = calculate_total(order_list)
+    
     display_receipt(order_list, total)
 
     # TODO: write a while loop (like in tier2) that asks the customer what
@@ -111,4 +112,5 @@ if __name__ == "__main__":
     # TODO: once the loop is done, call calculate_total() and then
     # display_receipt() to show the final receipt.
 
+# the funtion works. but the recipt not printing out correctly.
 
