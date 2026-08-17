@@ -40,78 +40,52 @@ MENU = {
 
 
 def get_price(item_name):
-    return MENU.get(item_name)
 
-    """
-    Return the price of item_name from MENU, or None if it isn't on the menu.
+    if item_name is None:
+        return None
 
-    Example:
-        get_price("Tea") -> 3.5
-        get_price("Pizza") -> None
-    """
-    # TODO: implement this function
-    pass
+    return MENU.get(str(item_name).strip().lower())   # not sure from Copilot AI assitance
 
 
 def calculate_total(order_list):
+
     total = 0
     for item in order_list:
         price = get_price(item)
         if price is not None:
             total += price
     return total
-    """
-    order_list is a list of item names, e.g. ["Coffee", "Muffin"].
-    Return the sum of all their prices (use get_price() to look each one up).
-    Skip any item that isn't found on the menu (don't crash!).
-
-    Example:
-        calculate_total(["Coffee", "Muffin"]) -> 9.5
-    """
-    # TODO: implement this function
-    pass
 
 
 def display_receipt(order_list, total):
-    print("----- RECEIPT -----")
+
+    print()
+    print("-------- RECEIPT --------")
     for item in order_list:
-        print(item)
-        print("Total: ")
-        print(f"${total:.2f}")
-    """
-    Print a neatly formatted receipt for order_list, followed by the total,
-    matching the style shown in the EXAMPLE OUTPUT above.
-    """
-    # TODO: implement this function
-    pass
+        price = get_price(item)
+        if price is not None:
+            print(f"{item.title():<18} ${price:.2f}")
+    print("-------------------------")
+    print(f"TOTAL:            ${total:.2f}")
 
 
 if __name__ == "__main__":
-    order_list = []
+    order_list = []             # not sure from AI assitance
 
     while True:
-        order_item = input("What would you like to order? (type 'done' to finish)").lower()
+        order_item = input("What would you like? (type 'done' to finish): ").strip().lower()
 
-        if order_item == "done":
+        if order_item == "done" or order_item == "finish":
             break
 
         if order_item in MENU:
-            print(f"Added {order_item} - ${MENU[order_item]}")
-            print()
+            order_list.append(order_item) # append mean? (from AI assitance)
+            print(f"Added {order_item.title()} - ${MENU[order_item]:.2f}")
         else:
             print(f"Sorry, {order_item} is not on the menu.")
-            print()
 
     total = calculate_total(order_list)
-    
     display_receipt(order_list, total)
 
-    # TODO: write a while loop (like in tier2) that asks the customer what
-    # they'd like, adds valid items to order_list, and stops when they type
-    # "done".
 
-    # TODO: once the loop is done, call calculate_total() and then
-    # display_receipt() to show the final receipt.
-
-# the funtion works. but the recipt not printing out correctly.
 
