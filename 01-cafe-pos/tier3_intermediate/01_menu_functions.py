@@ -87,4 +87,3 @@ if __name__ == "__main__":
     display_receipt(order_list, total)
 
 
-
