@@ -44,8 +44,7 @@ def get_price(item_name):
     if item_name is None:
         return None
 
-    return MENU.get(str(item_name).strip().lower())   # not sure from Copilot AI assitance
-
+    return MENU.get(str(item_name).strip().lower())   
 
 def calculate_total(order_list):
 
@@ -70,7 +69,7 @@ def display_receipt(order_list, total):
 
 
 if __name__ == "__main__":
-    order_list = []             # not sure from AI assitance
+    order_list = []             
 
     while True:
         order_item = input("What would you like? (type 'done' to finish): ").strip().lower()
